@@ -1,4 +1,3 @@
-
 // class MainComponent {
 //   constructor() {}
 //   renderBackround() {
@@ -145,3 +144,24 @@ class Music extends MainOption {
 }
 const music = new Music();
 music.render();
+
+class Kitchen extends MainOption {
+  constructor() {
+    super();
+  }
+  render() {
+    const backgr = document.createElement("div");
+    backgr.id = "kitchen";
+    const text = document.createElement("p");
+    text.id = "text";
+    text.innerHTML = "Kichen";
+    backgr.append(text);
+    const icon = document.createElement("p");
+    icon.innerHTML = '<i class="fas fa-utensils"></i>';
+    backgr.append(icon);
+    const getContainer = document.getElementById("container");
+    getContainer.append(backgr);
+  }
+}
+const kitchen = new Kitchen();
+kitchen.render();
