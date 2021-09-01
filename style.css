@@ -35,7 +35,6 @@ body {
   flex-direction: row;
   border-radius: 30px;
   background: #d5eebb;
-  opacity: 0.4;
 }
 
 #square {
@@ -134,4 +133,15 @@ body {
 }
 #choose-light-color p {
   margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#cross {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.fa-times {
+  pointer-events: none;
 }

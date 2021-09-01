@@ -49,14 +49,24 @@ function addLightSettings(e) {
   lightSettings.id = "choose-light-color";
   const text = document.createElement("p");
   text.innerHTML = "Lighting";
-  const lightInput = document.createElement("input");
-  lightInput.type = "radio";
-  lightInput.id = "lightInput";
-  lightInput.innerHTML = "Light ON/OFF";
-  lightSettings.append(lightInput);
+  const crossExit = document.createElement("div");
+  crossExit.classList.add("cross");
+  crossExit.innerHTML = '<i class="fas fa-times"></i>';
+  text.append(crossExit);
   lightSettings.prepend(text);
   const getBackground = document.getElementById("space");
   getBackground.prepend(lightSettings);
+
+  const deleteBtn = document.getElementsByClassName("cross")[0];
+  deleteBtn.addEventListener("click", deleteCross);
+
+  function deleteCross(e) {
+    const item = e.target;
+    if (item.classList[0] === "cross") {
+      const crossDelete = item.parentElement.parentElement;
+      crossDelete.remove();
+    }
+  }
 }
 
 class Curtains extends MainOption {
