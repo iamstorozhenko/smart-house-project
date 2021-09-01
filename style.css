@@ -105,7 +105,7 @@ body {
 #btn-kitchen {
   margin: 10px;
   width: 320px;
-  height: 90px;
+  height: 100px;
   background: #d5eebb;
   font-size: 20px;
   border-radius: 20px;
@@ -132,6 +132,7 @@ body {
   border-radius: 20px;
 }
 #choose-light-color p {
+  margin-bottom: 10px;
   margin-left: 10px;
   display: flex;
   justify-content: space-between;
@@ -140,8 +141,15 @@ body {
 .cross {
   font-size: 20px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .fa-times {
   pointer-events: none;
+}
+
+#random-color {
+  width: 50px;
+  height: 50px;
+  background-color: cornflowerblue;
 }
