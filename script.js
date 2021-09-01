@@ -23,8 +23,8 @@
 class MainOption {
   constructor() {}
   render() {
-    const backgr = document.createElement("div");
-    backgr.id = "btns";
+    const backgr = document.createElement("button");
+    backgr.id = "btn-light";
     const text = document.createElement("p");
     text.id = "text";
     text.innerHTML = "Light";
@@ -40,13 +40,32 @@ class MainOption {
 const mainOpt = new MainOption();
 mainOpt.render();
 
+const getLight = document.getElementById("btn-light");
+getLight.addEventListener("click", addLightSettings);
+
+function addLightSettings(e) {
+  console.log(e.target);
+  const lightSettings = document.createElement("div");
+  lightSettings.id = "choose-light-color";
+  const text = document.createElement("p");
+  text.innerHTML = "Lighting";
+  const lightInput = document.createElement("input");
+  lightInput.type = "radio";
+  lightInput.id = "lightInput";
+  lightInput.innerHTML = "Light ON/OFF";
+  lightSettings.append(lightInput);
+  lightSettings.prepend(text);
+  const getBackground = document.getElementById("space");
+  getBackground.prepend(lightSettings);
+}
+
 class Curtains extends MainOption {
   constructor() {
     super();
   }
   render() {
-    const backgr = document.createElement("div");
-    backgr.id = "btns";
+    const backgr = document.createElement("button");
+    backgr.id = "btn-curtains";
     const text = document.createElement("p");
     text.id = "text";
     text.innerHTML = "Curtains";
@@ -66,11 +85,11 @@ class Garage extends MainOption {
     super();
   }
   render() {
-    const backgr = document.createElement("div");
-    backgr.id = "btns";
+    const backgr = document.createElement("button");
+    backgr.id = "btn-garage";
     const text = document.createElement("p");
     text.id = "text";
-    text.innerHTML = "Curtains";
+    text.innerHTML = "Garage";
     backgr.append(text);
     const icon = document.createElement("p");
     icon.innerHTML = '<i class="fas fa-warehouse"></i>';
@@ -87,8 +106,8 @@ class Temperature extends MainOption {
     super();
   }
   render() {
-    const backgr = document.createElement("div");
-    backgr.id = "btns";
+    const backgr = document.createElement("button");
+    backgr.id = "btn-temperature";
     const text = document.createElement("p");
     text.id = "text";
     text.innerHTML = "Temperature";
@@ -108,8 +127,8 @@ class Tv extends MainOption {
     super();
   }
   render() {
-    const backgr = document.createElement("div");
-    backgr.id = "btns";
+    const backgr = document.createElement("button");
+    backgr.id = "btn-tv";
     const text = document.createElement("p");
     text.id = "text";
     text.innerHTML = "TV";
@@ -129,8 +148,8 @@ class Music extends MainOption {
     super();
   }
   render() {
-    const backgr = document.createElement("div");
-    backgr.id = "btns";
+    const backgr = document.createElement("button");
+    backgr.id = "btn-music";
     const text = document.createElement("p");
     text.id = "text";
     text.innerHTML = "Music";
@@ -150,8 +169,8 @@ class Kitchen extends MainOption {
     super();
   }
   render() {
-    const backgr = document.createElement("div");
-    backgr.id = "kitchen";
+    const backgr = document.createElement("button");
+    backgr.id = "btn-kitchen";
     const text = document.createElement("p");
     text.id = "text";
     text.innerHTML = "Kichen";

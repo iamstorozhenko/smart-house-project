@@ -27,11 +27,12 @@ body {
 
 #space {
   position: absolute;
+  margin-left: 100px;
   top: 30px;
+  width: 720px;
+  flex-wrap: wrap;
   display: flex;
-  justify-content: center;
-  height: 600px;
-  width: 650px;
+  flex-direction: row;
   border-radius: 30px;
   background: #d5eebb;
   opacity: 0.4;
@@ -53,7 +54,7 @@ body {
   text-align: center;
   justify-content: center;
 }
-
+/* 
 #bulb {
   color: #5f7a61;
   display: flex;
@@ -68,9 +69,9 @@ body {
   background: #d5eebb;
   font-size: 20px;
   border-radius: 20px;
-}
+} */
 
-#btns {
+/* #btns {
   margin: 10px;
   width: 150px;
   height: 150px;
@@ -85,4 +86,52 @@ body {
   font-size: 24px;
   text-align: center;
   justify-content: center;
+} */
+
+#btn-light,
+#btn-curtains,
+#btn-garage,
+#btn-temperature,
+#btn-tv,
+#btn-music {
+  margin: 10px;
+  width: 150px;
+  height: 150px;
+  background: #d5eebb;
+  font-size: 20px;
+  border-radius: 20px;
+  /* border-style: solid;
+  border-color: #5F7A61; */
+}
+#btn-kitchen {
+  margin: 10px;
+  width: 320px;
+  height: 90px;
+  background: #d5eebb;
+  font-size: 20px;
+  border-radius: 20px;
+  /* border-style: solid;
+  border-color: #5f7a61; */
+}
+
+#btn-kitchen p {
+  color: #444941;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+#choose-light-color {
+  font-size: 24px;
+  color: #000000;
+  font-weight: bold;
+  width: 200px;
+  height: 200px;
+  background-color: #c1cfc0;
+  margin: 20px;
+  border-radius: 20px;
+}
+#choose-light-color p {
+  margin-left: 10px;
 }
