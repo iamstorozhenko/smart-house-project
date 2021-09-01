@@ -65,8 +65,15 @@ function addLightSettings(e) {
     if (item.classList[0] === "cross") {
       const crossDelete = item.parentElement.parentElement;
       crossDelete.remove();
+      const btn = document.getElementById("btn-light");
+      btn.disabled = false;
     }
   }
+  function clicked() {
+    const btn = document.getElementById("btn-light");
+    btn.disabled = true;
+  }
+  clicked();
 }
 
 class Curtains extends MainOption {
