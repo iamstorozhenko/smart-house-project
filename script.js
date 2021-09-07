@@ -276,59 +276,14 @@ function garageSettings(e) {
   garageSettings.append(inputOnOffGarage);
 
   const getExtraLight = document.createElement("p");
-  getText.id = "extra-light-text";
-  getText.innerHTML = "Add extra light";
+  getExtraLight.id = "extra-light-text";
+  getExtraLight.innerHTML = "Add extra light";
   garageSettings.append(getExtraLight);
 
   const extraGarageLight = document.createElement("input");
   extraGarageLight.type = "checkbox";
   extraGarageLight.id = "extra-garage-light";
   garageSettings.append(extraGarageLight);
-
-  //   const getText = document.createElement("p");
-  //   getText.id = "getRandomColorText";
-  //   getText.innerHTML = "Get random light color: ";
-  //   curtainsSettings.append(getText);
-
-  //   const btnWrapper = document.createElement("div");
-  //   btnWrapper.id = "btn-wrapper";
-  //   curtainsSettings.append(btnWrapper);
-
-  //   const randomBtn = document.createElement("button");
-  //   randomBtn.id = "btn-random";
-  //   randomBtn.innerHTML = '<i class="fas fa-random"></i>';
-  //   btnWrapper.append(randomBtn);
-
-  //   const createRandomColor = document.createElement("div");
-  //   createRandomColor.id = "random-color";
-  //   btnWrapper.append(createRandomColor);
-
-  //   const hexColor = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
-  //   randomBtn.addEventListener("click", () => {
-  //     let hex = "#";
-  //     for (let i = 0; i < 6; i++) {
-  //       hex += hexColor[getRandomColor()];
-  //     }
-  //     createRandomColor.style.backgroundColor = hex;
-  //   });
-  //   function getRandomColor() {
-  //     return Math.floor(Math.random() * hexColor.length);
-  //   }
-
-  //   inputOnOffCurtains.addEventListener("click", checkOnOff);
-
-  //   function checkOnOff() {
-  //     if (inputOnOffCurtains.checked == true) {
-  //       document.getElementById("btn-random").disabled = false;
-  //       document.getElementById("btn-random").style.opacity = 1;
-  //       document.getElementById("random-color").style.opacity = 1;
-  //     } else if (inputOnOffCurtains.checked == false) {
-  //       document.getElementById("btn-random").disabled = true;
-  //       document.getElementById("btn-random").style.opacity = 0.3;
-  //       document.getElementById("random-color").style.opacity = 0.3;
-  //     }
-  //   }
-  //   checkOnOff();
 }
 
 class Temperature extends MainOption {
@@ -352,6 +307,48 @@ class Temperature extends MainOption {
 const temperature = new Temperature();
 temperature.render();
 
+const getTemperature = document.getElementById("btn-temperature");
+getTemperature.addEventListener("click", temperatureSettings);
+
+function temperatureSettings(e) {
+  console.log(e.target);
+  const temperatureSettings = document.createElement("div");
+  temperatureSettings.id = "choose-light-color";
+  const text = document.createElement("p");
+  text.innerHTML = "Temperature";
+  const crossExit = document.createElement("div");
+  crossExit.classList.add("cross");
+  crossExit.innerHTML = '<i class="fas fa-times"></i>';
+  text.append(crossExit);
+  temperatureSettings.prepend(text);
+  const getBackground = document.getElementById("space");
+  getBackground.prepend(temperatureSettings);
+
+  const deleteBtn = document.getElementsByClassName("cross")[0];
+  deleteBtn.addEventListener("click", deleteCross);
+
+  function deleteCross(e) {
+    const item = e.target;
+    if (item.classList[0] === "cross") {
+      const crossDelete = item.parentElement.parentElement;
+      crossDelete.remove();
+      const btn = document.getElementById("btn-temperature");
+      btn.disabled = false;
+    }
+  }
+
+  function clicked() {
+    const btn = document.getElementById("btn-temperature");
+    btn.disabled = true;
+  }
+  clicked();
+
+  const inputOnOffGarage = document.createElement("input");
+  inputOnOffGarage.type = "checkbox";
+  inputOnOffGarage.id = "input-checker-garage";
+  temperatureSettings.append(inputOnOffGarage);
+}
+
 class Tv extends MainOption {
   constructor() {
     super();
@@ -372,6 +369,48 @@ class Tv extends MainOption {
 }
 const tv = new Tv();
 tv.render();
+
+const getTV = document.getElementById("btn-tv");
+getTV.addEventListener("click", tvSettings);
+
+function tvSettings(e) {
+  console.log(e.target);
+  const tvSettings = document.createElement("div");
+  tvSettings.id = "choose-light-color";
+  const text = document.createElement("p");
+  text.innerHTML = "TV";
+  const crossExit = document.createElement("div");
+  crossExit.classList.add("cross");
+  crossExit.innerHTML = '<i class="fas fa-times"></i>';
+  text.append(crossExit);
+  tvSettings.prepend(text);
+  const getBackground = document.getElementById("space");
+  getBackground.prepend(tvSettings);
+
+  const deleteBtn = document.getElementsByClassName("cross")[0];
+  deleteBtn.addEventListener("click", deleteCross);
+
+  function deleteCross(e) {
+    const item = e.target;
+    if (item.classList[0] === "cross") {
+      const crossDelete = item.parentElement.parentElement;
+      crossDelete.remove();
+      const btn = document.getElementById("btn-tv");
+      btn.disabled = false;
+    }
+  }
+
+  function clicked() {
+    const btn = document.getElementById("btn-tv");
+    btn.disabled = true;
+  }
+  clicked();
+
+  const inputOnOffTV = document.createElement("input");
+  inputOnOffTV.type = "checkbox";
+  inputOnOffTV.id = "input-checker-garage";
+  tvSettings.append(inputOnOffTV);
+}
 
 class Music extends MainOption {
   constructor() {
@@ -394,6 +433,48 @@ class Music extends MainOption {
 const music = new Music();
 music.render();
 
+const getMusic = document.getElementById("btn-music");
+getMusic.addEventListener("click", musicSettings);
+
+function musicSettings(e) {
+  console.log(e.target);
+  const musicSettings = document.createElement("div");
+  musicSettings.id = "choose-light-color";
+  const text = document.createElement("p");
+  text.innerHTML = "Music";
+  const crossExit = document.createElement("div");
+  crossExit.classList.add("cross");
+  crossExit.innerHTML = '<i class="fas fa-times"></i>';
+  text.append(crossExit);
+  musicSettings.prepend(text);
+  const getBackground = document.getElementById("space");
+  getBackground.prepend(musicSettings);
+
+  const deleteBtn = document.getElementsByClassName("cross")[0];
+  deleteBtn.addEventListener("click", deleteCross);
+
+  function deleteCross(e) {
+    const item = e.target;
+    if (item.classList[0] === "cross") {
+      const crossDelete = item.parentElement.parentElement;
+      crossDelete.remove();
+      const btn = document.getElementById("btn-music");
+      btn.disabled = false;
+    }
+  }
+
+  function clicked() {
+    const btn = document.getElementById("btn-music");
+    btn.disabled = true;
+  }
+  clicked();
+
+  const inputOnOffMusic = document.createElement("input");
+  inputOnOffMusic.type = "checkbox";
+  inputOnOffMusic.id = "input-checker-garage";
+  musicSettings.append(inputOnOffMusic);
+}
+
 class Kitchen extends MainOption {
   constructor() {
     super();
@@ -414,3 +495,45 @@ class Kitchen extends MainOption {
 }
 const kitchen = new Kitchen();
 kitchen.render();
+
+const getKitchen = document.getElementById("btn-kitchen");
+getKitchen.addEventListener("click", kitchenSettings);
+
+function kitchenSettings(e) {
+  console.log(e.target);
+  const kitchenSettings = document.createElement("div");
+  kitchenSettings.id = "choose-light-color";
+  const text = document.createElement("p");
+  text.innerHTML = "Kitchen";
+  const crossExit = document.createElement("div");
+  crossExit.classList.add("cross");
+  crossExit.innerHTML = '<i class="fas fa-times"></i>';
+  text.append(crossExit);
+  kitchenSettings.prepend(text);
+  const getBackground = document.getElementById("space");
+  getBackground.prepend(kitchenSettings);
+
+  const deleteBtn = document.getElementsByClassName("cross")[0];
+  deleteBtn.addEventListener("click", deleteCross);
+
+  function deleteCross(e) {
+    const item = e.target;
+    if (item.classList[0] === "cross") {
+      const crossDelete = item.parentElement.parentElement;
+      crossDelete.remove();
+      const btn = document.getElementById("btn-kitchen");
+      btn.disabled = false;
+    }
+  }
+
+  function clicked() {
+    const btn = document.getElementById("btn-kitchen");
+    btn.disabled = true;
+  }
+  clicked();
+
+  const inputOnOffKitchen = document.createElement("input");
+  inputOnOffKitchen.type = "checkbox";
+  inputOnOffKitchen.id = "input-checker-garage";
+  kitchenSettings.append(inputOnOffKitchen);
+}
