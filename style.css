@@ -127,8 +127,8 @@ body {
   font-size: 24px;
   color: #000000;
   font-weight: bold;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   background-color: #c1cfc0;
   margin: 20px;
   border-radius: 20px;
@@ -155,10 +155,12 @@ input[type="checkbox"] {
   appearance: none;
   height: 40px;
   width: 70px;
-  background-color: cadetblue;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-style: solid;
+  border-color: #7fc8a9;
   border-radius: 50px;
   position: absolute;
-  margin: 15 0 0 5px;
   cursor: pointer;
   outline: none;
   transition: 0.3s;
@@ -168,7 +170,7 @@ input[type="checkbox"]::before {
   position: absolute;
   height: 30px;
   width: 30px;
-  top: 5px;
+  top: 2px;
   left: 5px;
   background-color: cornsilk;
   border-radius: 50%;
@@ -176,11 +178,11 @@ input[type="checkbox"]::before {
 }
 
 input[type="checkbox"]::after {
-  content: "On";
+  content: "Off";
   position: absolute;
   color: #000000;
   font-size: 20px;
-  top: 10px;
+  top: 5px;
   left: 80px;
   bottom: -5px;
   letter-spacing: 1px;
@@ -188,28 +190,45 @@ input[type="checkbox"]::after {
 }
 
 input[type="checkbox"]:checked {
-  background-color: green;
+  background-color: #7fc8a9;
 }
 
 input[type="checkbox"]:checked::before {
-  background-color: grey;
-  left: 35px;
+  background-color: #d5eebb;
+  left: 32px;
 }
 
 input[type="checkbox"]:checked::after {
-  content: "Off";
-  color: green;
+  content: "On";
+  color: #000000;
 }
 
 #random-color {
-  width: 100px;
+  width: 120px;
   height: 50px;
   border-radius: 16px;
   background-color: #ffffff;
 }
 
-#btn-wrapper {
+#getRandomColorText {
+  font-size: 20px;
   margin-top: 80px;
+  font-weight: normal;
+}
+
+#btn-wrapper {
+  margin-top: 15px;
   display: flex;
   justify-content: center;
+}
+
+#btn-random {
+  border: none;
+  border-radius: 15%;
+  margin-right: 10px;
+  width: 50px;
+  font-size: 20px;
+  background: #7fc8a9;
+  color: #ffffff;
+  cursor: pointer;
 }

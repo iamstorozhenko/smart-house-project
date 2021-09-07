@@ -59,12 +59,18 @@ function addLightSettings(e) {
   inputOnOff.id = "input-checker";
   lightSettings.append(inputOnOff);
 
+  const getText = document.createElement("p");
+  getText.id = "getRandomColorText";
+  getText.innerHTML = "Get random light color: ";
+  lightSettings.append(getText);
+
   const btnWrapper = document.createElement("div");
   btnWrapper.id = "btn-wrapper";
   lightSettings.append(btnWrapper);
+
   const randomBtn = document.createElement("button");
   randomBtn.id = "btn-random";
-  randomBtn.innerHTML = "Click";
+  randomBtn.innerHTML = '<i class="fas fa-random"></i>';
   btnWrapper.append(randomBtn);
 
   const createRandomColor = document.createElement("div");
@@ -82,6 +88,21 @@ function addLightSettings(e) {
   function getRandomColor() {
     return Math.floor(Math.random() * hexColor.length);
   }
+
+  inputOnOff.addEventListener("click", checkOnOff);
+
+  function checkOnOff() {
+    if (inputOnOff.checked == true) {
+      document.getElementById("btn-random").disabled = false;
+      document.getElementById("btn-random").style.opacity = 1;
+      document.getElementById("random-color").style.opacity = 1;
+    } else if (inputOnOff.checked == false) {
+      document.getElementById("btn-random").disabled = true;
+      document.getElementById("btn-random").style.opacity = 0.3;
+      document.getElementById("random-color").style.opacity = 0.3;
+    }
+  }
+  checkOnOff();
 }
 
 class Curtains extends MainOption {
