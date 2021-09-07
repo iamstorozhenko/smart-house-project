@@ -93,6 +93,7 @@ body {
 #btn-temperature,
 #btn-tv,
 #btn-music {
+  cursor: pointer;
   margin: 10px;
   width: 150px;
   height: 150px;
@@ -103,6 +104,7 @@ body {
   border-color: #5F7A61; */
 }
 #btn-kitchen {
+  cursor: pointer;
   margin: 10px;
   width: 320px;
   height: 100px;
@@ -148,8 +150,66 @@ body {
   pointer-events: none;
 }
 
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 40px;
+  width: 70px;
+  background-color: cadetblue;
+  border-radius: 50px;
+  position: absolute;
+  margin: 15 0 0 5px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+}
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 5px;
+  left: 5px;
+  background-color: cornsilk;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input[type="checkbox"]::after {
+  content: "On";
+  position: absolute;
+  color: #000000;
+  font-size: 20px;
+  top: 10px;
+  left: 80px;
+  bottom: -5px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+input[type="checkbox"]:checked {
+  background-color: green;
+}
+
+input[type="checkbox"]:checked::before {
+  background-color: grey;
+  left: 35px;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "Off";
+  color: green;
+}
+
 #random-color {
-  width: 50px;
+  width: 100px;
   height: 50px;
-  background-color: cornflowerblue;
+  border-radius: 16px;
+  background-color: #ffffff;
+}
+
+#btn-wrapper {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
 }

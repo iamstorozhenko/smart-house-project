@@ -54,13 +54,22 @@ function addLightSettings(e) {
   }
   clicked();
 
+  const inputOnOff = document.createElement("input");
+  inputOnOff.type = "checkbox";
+  inputOnOff.id = "input-checker";
+  lightSettings.append(inputOnOff);
+
+  const btnWrapper = document.createElement("div");
+  btnWrapper.id = "btn-wrapper";
+  lightSettings.append(btnWrapper);
   const randomBtn = document.createElement("button");
+  randomBtn.id = "btn-random";
   randomBtn.innerHTML = "Click";
-  lightSettings.append(randomBtn);
+  btnWrapper.append(randomBtn);
 
   const createRandomColor = document.createElement("div");
   createRandomColor.id = "random-color";
-  lightSettings.append(createRandomColor);
+  btnWrapper.append(createRandomColor);
 
   const hexColor = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
   randomBtn.addEventListener("click", () => {
