@@ -151,7 +151,6 @@ body {
 }
 
 input[type="checkbox"] {
-  -webkit-appearance: none;
   appearance: none;
   height: 40px;
   width: 70px;
@@ -214,6 +213,34 @@ input[type="checkbox"]:checked::after {
 
 #input-checker-curtains:checked::after {
   content: "Open";
+}
+
+#input-checker-garage:before {
+  content: "";
+}
+
+#input-checker-garage:after {
+  content: "Open";
+}
+
+#input-checker-garage:checked::after {
+  content: "Close";
+}
+
+#extra-garage-light {
+  margin-top: 80px;
+}
+
+#extra-garage-light::before {
+  content: "";
+}
+
+#extra-garage-light::after {
+  content: "Add";
+}
+
+#extra-garage-light:checked::after {
+  content: "Remove";
 }
 
 #random-color {
