@@ -343,10 +343,28 @@ function temperatureSettings(e) {
   }
   clicked();
 
-  const inputOnOffGarage = document.createElement("input");
-  inputOnOffGarage.type = "checkbox";
-  inputOnOffGarage.id = "input-checker-garage";
-  temperatureSettings.append(inputOnOffGarage);
+  const inputOnOffTemperature = document.createElement("input");
+  inputOnOffTemperature.type = "checkbox";
+  inputOnOffTemperature.id = "input-checker-garage";
+  temperatureSettings.append(inputOnOffTemperature);
+
+  const rangeBtnWrapper = document.createElement("div");
+  rangeBtnWrapper.id = "range-wrapper";
+  const rangeBtn = document.createElement("input");
+  rangeBtn.id = "range-btn";
+  rangeBtn.type = "range";
+  rangeBtn.min = "10";
+  rangeBtn.max = "35";
+  rangeBtn.step = "1";
+  rangeBtn.value = "20";
+  const textRange = document.createElement("span");
+  textRange.id = "result";
+  rangeBtn.addEventListener("change", () => {
+    textRange.innerText = rangeBtn.value;
+  });
+  temperatureSettings.append(rangeBtnWrapper);
+  rangeBtnWrapper.append(textRange);
+  rangeBtnWrapper.append(rangeBtn);
 }
 
 class Tv extends MainOption {
