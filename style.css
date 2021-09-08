@@ -246,6 +246,18 @@ input[type="checkbox"]:checked::after {
   content: "Remove";
 }
 
+#input-checker-temperature::before {
+  content: "";
+}
+
+#input-checker-temperature::after {
+  content: "On";
+}
+
+#input-checker-temperature:checked::after {
+  content: "Off";
+}
+
 #random-color {
   width: 120px;
   height: 50px;
@@ -280,7 +292,4 @@ input[type="checkbox"]:checked::after {
   margin-top: 100px;
   display: flex;
   justify-content: center;
-}
-
-#range-btn {
 }

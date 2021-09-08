@@ -345,7 +345,7 @@ function temperatureSettings(e) {
 
   const inputOnOffTemperature = document.createElement("input");
   inputOnOffTemperature.type = "checkbox";
-  inputOnOffTemperature.id = "input-checker-garage";
+  inputOnOffTemperature.id = "input-checker-temperature";
   temperatureSettings.append(inputOnOffTemperature);
 
   const rangeBtnWrapper = document.createElement("div");
@@ -359,12 +359,24 @@ function temperatureSettings(e) {
   rangeBtn.value = "20";
   const textRange = document.createElement("span");
   textRange.id = "result";
+  textRange.innerText = rangeBtn.value;
   rangeBtn.addEventListener("change", () => {
     textRange.innerText = rangeBtn.value;
   });
   temperatureSettings.append(rangeBtnWrapper);
   rangeBtnWrapper.append(textRange);
   rangeBtnWrapper.append(rangeBtn);
+
+  inputOnOffTemperature.addEventListener("click", checkInput);
+
+  function checkInput() {
+    if (inputOnOffTemperature.checked == true) {
+      rangeBtnWrapper.style.opacity = 1;
+    } else if (inputOnOffTemperature.checked == false) {
+      rangeBtnWrapper.style.opacity = 0;
+    }
+  }
+  checkInput();
 }
 
 class Tv extends MainOption {
