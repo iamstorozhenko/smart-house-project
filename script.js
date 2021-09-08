@@ -438,8 +438,54 @@ function tvSettings(e) {
 
   const inputOnOffTV = document.createElement("input");
   inputOnOffTV.type = "checkbox";
-  inputOnOffTV.id = "input-checker-garage";
+  inputOnOffTV.id = "input-checker-tv";
   tvSettings.append(inputOnOffTV);
+
+  const tvOption = document.createElement("p");
+  tvOption.id = "tv-option";
+  tvOption.innerText = "Choose chanel: ";
+  tvSettings.append(tvOption);
+
+  const chanelValue = document.createElement("span");
+  chanelValue.id = "chanel-value";
+  chanelValue.innerHTML = 0;
+  tvSettings.append(chanelValue);
+
+  const chanelWrapper = document.createElement("div");
+  chanelWrapper.id = "chanel-wrapper";
+  tvSettings.append(chanelWrapper);
+
+  const btnBack = document.createElement("button");
+  btnBack.id = "btn-back";
+  btnBack.classList.add("btn-back");
+  btnBack.innerText = "Back";
+  chanelWrapper.append(btnBack);
+
+  const btnForward = document.createElement("button");
+  btnForward.classList.add("btn-forward");
+  btnForward.id = "btn-forward";
+  btnForward.innerText = "Forward";
+  chanelWrapper.append(btnForward);
+
+  btnForward.addEventListener("click", increment);
+
+  function increment() {
+    let elem = document.getElementById("chanel-value");
+    let value = elem.innerHTML;
+    value++;
+    console.log(value);
+    document.getElementById("chanel-value").innerHTML = value;
+  }
+  increment();
+
+  btnBack.addEventListener("click", decrement);
+  function decrement() {
+    let elem = document.getElementById("chanel-value");
+    let value = elem.innerHTML;
+    value--;
+    document.getElementById("chanel-value").innerHTML = value;
+  }
+
 }
 
 class Music extends MainOption {
