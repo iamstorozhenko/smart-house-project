@@ -270,6 +270,37 @@ input[type="checkbox"]:checked::after {
   content: "Off";
 }
 
+#input-checker-kitchen:before {
+  content: "";
+}
+
+#input-checker-kitchen:after {
+  top: 0px;
+  content: "Turn on dishwasher";
+}
+
+#input-checker-kitchen:checked::after {
+  top: 0px;
+  content: "Turn off dishwasher";
+}
+
+#boil-kettle::before {
+  content: "";
+}
+
+#boil-kettle::after {
+    top: 0px;
+  content: "Boil kettle";
+}
+
+#boil-kettle:checked::after {
+  content: "Turn off";
+}
+
+#boil-kettle {
+  margin-top: 80px;
+}
+
 #random-color {
   width: 120px;
   height: 50px;

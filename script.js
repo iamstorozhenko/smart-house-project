@@ -646,6 +646,11 @@ function kitchenSettings(e) {
 
   const inputOnOffKitchen = document.createElement("input");
   inputOnOffKitchen.type = "checkbox";
-  inputOnOffKitchen.id = "input-checker-garage";
+  inputOnOffKitchen.id = "input-checker-kitchen";
   kitchenSettings.append(inputOnOffKitchen);
+
+  const boilKettle = document.createElement("input");
+  boilKettle.type = "checkbox";
+  boilKettle.id = "boil-kettle";
+  kitchenSettings.append(boilKettle);
 }
