@@ -565,7 +565,7 @@ function musicSettings(e) {
   musicSettings.append(inputOnOffMusic);
 
   const audioPlayerWrapper = document.createElement("div");
-  audioPlayerWrapper.id = "audio-player";
+  audioPlayerWrapper.id = "audio-player-wrapper";
 
   const player = document.createElement("audio");
   player.controls = true;
@@ -575,6 +575,16 @@ function musicSettings(e) {
   player.append(src);
   audioPlayerWrapper.append(player);
   musicSettings.append(audioPlayerWrapper);
+
+  inputOnOffMusic.addEventListener("click", checkInputMusic);
+  function checkInputMusic() {
+    if (inputOnOffMusic.checked == true) {
+      player.style.opacity = 1;
+    } else if (inputOnOffMusic.checked == false) {
+      player.style.opacity = 0;
+    }
+  }
+  checkInputMusic();
 }
 
 class Kitchen extends MainOption {
