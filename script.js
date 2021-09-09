@@ -441,30 +441,34 @@ function tvSettings(e) {
   inputOnOffTV.id = "input-checker-tv";
   tvSettings.append(inputOnOffTV);
 
+  const chanellAllWrapper = document.createElement("div");
+  chanellAllWrapper.id = "channel-all-wrapper";
+  tvSettings.append(chanellAllWrapper);
+
   const tvOption = document.createElement("p");
   tvOption.id = "tv-option";
   tvOption.innerText = "Choose chanel: ";
-  tvSettings.append(tvOption);
+  chanellAllWrapper.append(tvOption);
 
   const chanelValue = document.createElement("span");
   chanelValue.id = "chanel-value";
   chanelValue.innerHTML = 0;
-  tvSettings.append(chanelValue);
+  chanellAllWrapper.append(chanelValue);
 
   const chanelWrapper = document.createElement("div");
   chanelWrapper.id = "chanel-wrapper";
-  tvSettings.append(chanelWrapper);
+  chanellAllWrapper.append(chanelWrapper);
 
   const btnBack = document.createElement("button");
   btnBack.id = "btn-back";
   btnBack.classList.add("btn-back");
-  btnBack.innerText = "Back";
+  btnBack.innerText = "Previous";
   chanelWrapper.append(btnBack);
 
   const btnForward = document.createElement("button");
   btnForward.classList.add("btn-forward");
   btnForward.id = "btn-forward";
-  btnForward.innerText = "Forward";
+  btnForward.innerText = "Next";
   chanelWrapper.append(btnForward);
 
   btnForward.addEventListener("click", increment);
@@ -486,6 +490,16 @@ function tvSettings(e) {
     document.getElementById("chanel-value").innerHTML = value;
   }
 
+  inputOnOffTV.addEventListener("click", checkInputTv);
+
+  function checkInputTv() {
+    if (inputOnOffTV.checked == true) {
+      chanellAllWrapper.style.opacity = 1;
+    } else if (inputOnOffTV.checked == false) {
+      chanellAllWrapper.style.opacity = 0;
+    }
+  }
+  checkInputTv();
 }
 
 class Music extends MainOption {
@@ -547,8 +561,20 @@ function musicSettings(e) {
 
   const inputOnOffMusic = document.createElement("input");
   inputOnOffMusic.type = "checkbox";
-  inputOnOffMusic.id = "input-checker-garage";
+  inputOnOffMusic.id = "input-checker-music";
   musicSettings.append(inputOnOffMusic);
+
+  const audioPlayerWrapper = document.createElement("div");
+  audioPlayerWrapper.id = "audio-player";
+
+  const player = document.createElement("audio");
+  player.controls = true;
+  player.id = "player";
+  const src = document.createElement("source");
+  src.src = "./beatles.mp3";
+  player.append(src);
+  audioPlayerWrapper.append(player);
+  musicSettings.append(audioPlayerWrapper);
 }
 
 class Kitchen extends MainOption {

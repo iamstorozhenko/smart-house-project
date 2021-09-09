@@ -307,6 +307,27 @@ input[type="checkbox"]:checked::after {
 }
 
 #tv-option {
-  margin-top: 80px;
   font-weight: normal;
+}
+
+#channel-all-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+#chanel-value {
+  text-align: center;
+}
+
+#chanel-wrapper {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+audio {
+  margin-top: 80px;
+  margin-left: 10px;
+  width: 90%;
 }
