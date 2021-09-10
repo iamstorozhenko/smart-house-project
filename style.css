@@ -163,8 +163,13 @@ body {
   pointer-events: none;
 }
 
+
+#result {
+    margin-bottom: 10px;
+  }
+
 input[type="range"] {
-  width: 160px;
+  width: 155px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -229,10 +234,6 @@ input[type="checkbox"]::before {
   background-color: cornsilk;
   border-radius: 50%;
   transition: 0.3s;
-}
-
-#result {
-  margin-right: 10px;
 }
 
 input[type="checkbox"]::after {
@@ -396,8 +397,10 @@ input[type="checkbox"]:checked::after {
 
 #range-wrapper {
   margin-top: 100px;
+  margin-left: 50px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 #tv-option {

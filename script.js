@@ -359,9 +359,10 @@ function temperatureSettings(e) {
   rangeBtn.value = "24";
   const textRange = document.createElement("span");
   textRange.id = "result";
-  textRange.innerText = rangeBtn.value;
+  textRange.innerText = rangeBtn.value + "°C";
+
   rangeBtn.addEventListener("change", () => {
-    textRange.innerText = rangeBtn.value;
+    textRange.innerText = rangeBtn.value + "°C";
   });
   temperatureSettings.append(rangeBtnWrapper);
   rangeBtnWrapper.append(textRange);
