@@ -93,13 +93,13 @@ function lightSettings(e) {
 
   function checkOnOff() {
     if (inputOnOff.checked == true) {
-      document.getElementById("btn-random").disabled = false;
       document.getElementById("btn-random").style.opacity = 1;
       document.getElementById("random-color").style.opacity = 1;
+      document.getElementById("getRandomColorText").style.opacity = 1;
     } else if (inputOnOff.checked == false) {
-      document.getElementById("btn-random").disabled = true;
-      document.getElementById("btn-random").style.opacity = 0.3;
-      document.getElementById("random-color").style.opacity = 0.3;
+      document.getElementById("getRandomColorText").style.opacity = 0;
+      document.getElementById("btn-random").style.opacity = 0;
+      document.getElementById("random-color").style.opacity = 0;
     }
   }
   checkOnOff();
@@ -462,13 +462,13 @@ function tvSettings(e) {
   const btnBack = document.createElement("button");
   btnBack.id = "btn-back";
   btnBack.classList.add("btn-back");
-  btnBack.innerText = "Previous";
+  btnBack.innerText = "-";
   chanelWrapper.append(btnBack);
 
   const btnForward = document.createElement("button");
   btnForward.classList.add("btn-forward");
   btnForward.id = "btn-forward";
-  btnForward.innerText = "Next";
+  btnForward.innerText = "+";
   chanelWrapper.append(btnForward);
 
   btnForward.addEventListener("click", increment);

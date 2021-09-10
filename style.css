@@ -37,7 +37,7 @@ body {
   background: #e4fbff;
 }
 
-#square {
+/* #square {
   margin: 10px;
   width: 150px;
   height: 150px;
@@ -52,7 +52,7 @@ body {
   font-size: 28px;
   text-align: center;
   justify-content: center;
-}
+} */
 
 #btn-light,
 #btn-curtains,
@@ -71,9 +71,43 @@ body {
   letter-spacing: 1px;
   border-radius: 20px;
   border: 3px solid #7868e6;
-  /* border-style: solid;
-  border-color: #5F7A61; */
 }
+
+#btn-light:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+#btn-curtains:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+#btn-garage:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+#btn-temperature:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+#btn-tv:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+#btn-music:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+#btn-kitchen:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 #btn-kitchen {
   cursor: pointer;
   margin: 10px;
@@ -87,8 +121,6 @@ body {
   letter-spacing: 1px;
   border: 3px solid #7868e6;
   border-radius: 20px;
-  /* border-style: solid;
-  border-color: #5f7a61; */
 }
 
 #btn-kitchen p {
@@ -108,6 +140,11 @@ body {
   margin: 20px;
   border-radius: 20px;
 }
+
+#choose-light-color:disabled {
+  color: #ff7171;
+}
+
 #choose-light-color p {
   letter-spacing: 1px;
   margin-bottom: 10px;
@@ -138,7 +175,7 @@ input[type="range"] {
 
 input[type="range"]::-webkit-slider-runnable-track {
   height: 7px;
-  background-color: #FF7171;
+  background-color: #ff7171;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -148,12 +185,12 @@ input[type="range"]::-webkit-slider-thumb {
   height: 15px;
   -webkit-appearance: none;
   margin-top: -4px;
-  box-shadow: -200px 0 0 200px #B8B5FF;
+  box-shadow: -200px 0 0 200px #b8b5ff;
 }
 
 input[type="range"]::-moz-range-track {
   height: 7px;
-  background-color: #FF7171;
+  background-color: #ff7171;
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -388,3 +425,30 @@ audio {
   margin-left: 10px;
   width: 90%;
 }
+
+#chanel-value {
+  font-size: 30px;
+}
+
+#btn-back,
+#btn-forward {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  color: #ffffff;
+  border: 1px solid #b8b5ff;
+  background: #b8b5ff;
+  margin-right: 5px;
+}
+
+/* #btn-forward {
+    cursor: pointer;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  color: #ffffff;
+  border: 1px solid #b8b5ff;
+  background: #b8b5ff;
+  margin-right: 5px;
+} */
