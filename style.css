@@ -9,7 +9,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: "Roboto", sans-serif;
-  background: #7fc8a9;
+  background: #b8b5ff;
 }
 .container {
   flex: 2;
@@ -34,14 +34,14 @@ body {
   display: flex;
   flex-direction: row;
   border-radius: 30px;
-  background: #d5eebb;
+  background: #e4fbff;
 }
 
 #square {
   margin: 10px;
   width: 150px;
   height: 150px;
-  background: #d5eebb;
+  background: #edeef7;
   font-size: 20px;
   border-radius: 20px;
 }
@@ -53,39 +53,6 @@ body {
   text-align: center;
   justify-content: center;
 }
-/* 
-#bulb {
-  color: #5f7a61;
-  display: flex;
-  font-size: 38px;
-  justify-content: center;
-  margin: 5px;
-}
-
-#square {
-  width: 150px;
-  height: 150px;
-  background: #d5eebb;
-  font-size: 20px;
-  border-radius: 20px;
-} */
-
-/* #btns {
-  margin: 10px;
-  width: 150px;
-  height: 150px;
-  background: #d5eebb;
-  font-size: 20px;
-  border-radius: 20px;
-}
-
-#btns p {
-  color: #444941;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: center;
-  justify-content: center;
-} */
 
 #btn-light,
 #btn-curtains,
@@ -94,12 +61,16 @@ body {
 #btn-tv,
 #btn-music {
   cursor: pointer;
+  color: #ffffff;
   margin: 10px;
   width: 150px;
   height: 150px;
-  background: #d5eebb;
+  background: #7868e6;
   font-size: 20px;
+  font-weight: bolder;
+  letter-spacing: 1px;
   border-radius: 20px;
+  border: 3px solid #7868e6;
   /* border-style: solid;
   border-color: #5F7A61; */
 }
@@ -108,8 +79,13 @@ body {
   margin: 10px;
   width: 320px;
   height: 100px;
-  background: #d5eebb;
+  color: #ffffff;
+  background: #7868e6;
   font-size: 20px;
+  font-size: 20px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  border: 3px solid #7868e6;
   border-radius: 20px;
   /* border-style: solid;
   border-color: #5f7a61; */
@@ -119,19 +95,21 @@ body {
   font-size: 20px;
   text-align: center;
   justify-content: center;
+  color: #ffffff;
 }
 
 #choose-light-color {
   font-size: 24px;
-  color: #000000;
+  color: #ffffff;
   font-weight: bold;
   width: 250px;
   height: 250px;
-  background-color: #c1cfc0;
+  background-color: #7868e6;
   margin: 20px;
   border-radius: 20px;
 }
 #choose-light-color p {
+  letter-spacing: 1px;
   margin-bottom: 10px;
   margin-left: 10px;
   display: flex;
@@ -148,6 +126,46 @@ body {
   pointer-events: none;
 }
 
+input[type="range"] {
+  width: 160px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  overflow: hidden;
+  height: 7px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 7px;
+  background-color: #FF7171;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background: #ecf0f1;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  -webkit-appearance: none;
+  margin-top: -4px;
+  box-shadow: -200px 0 0 200px #B8B5FF;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 7px;
+  background-color: #FF7171;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: #ecf0f1;
+  cursor: pointer;
+  height: 7px;
+  border-radius: 0px;
+  box-shadow: -200px 0px 0px 200px #43e5f7;
+  padding: 0px;
+  margin: 0px;
+}
+
 input[type="checkbox"] {
   appearance: none;
   height: 40px;
@@ -155,7 +173,9 @@ input[type="checkbox"] {
   margin-top: 10px;
   margin-left: 10px;
   border-style: solid;
-  border-color: #7fc8a9;
+  border-color: #b8b5ff;
+  letter-spacing: 1px;
+  color: #ffffff;
   border-radius: 50px;
   position: absolute;
   cursor: pointer;
@@ -174,11 +194,15 @@ input[type="checkbox"]::before {
   transition: 0.3s;
 }
 
+#result {
+  margin-right: 10px;
+}
+
 input[type="checkbox"]::after {
   content: "Off";
   font-weight: bolder;
   position: absolute;
-  color: #000000;
+  color: #ffffff;
   font-size: 20px;
   top: 5px;
   left: 80px;
@@ -187,17 +211,19 @@ input[type="checkbox"]::after {
 }
 
 input[type="checkbox"]:checked {
-  background-color: #7fc8a9;
+  background-color: #b8b5ff;
+  color: #ffffff;
 }
 
 input[type="checkbox"]:checked::before {
-  background-color: #d5eebb;
+  background-color: #ffffff;
+  color: #ffffff;
   left: 32px;
 }
 
 input[type="checkbox"]:checked::after {
   content: "On";
-  color: #000000;
+  color: #ffffff;
 }
 
 #input-checker-curtains:before {
@@ -289,7 +315,7 @@ input[type="checkbox"]:checked::after {
 }
 
 #boil-kettle::after {
-    top: 0px;
+  top: 0px;
   content: "Boil kettle";
 }
 
@@ -326,7 +352,7 @@ input[type="checkbox"]:checked::after {
   margin-right: 10px;
   width: 50px;
   font-size: 20px;
-  background: #7fc8a9;
+  background: #b8b5ff;
   color: #ffffff;
   cursor: pointer;
 }

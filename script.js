@@ -61,7 +61,7 @@ function lightSettings(e) {
 
   const getText = document.createElement("p");
   getText.id = "getRandomColorText";
-  getText.innerHTML = "Get random light color: ";
+  getText.innerHTML = "Use random light color: ";
   curtainsSettings.append(getText);
 
   const btnWrapper = document.createElement("div");
@@ -356,7 +356,7 @@ function temperatureSettings(e) {
   rangeBtn.min = "10";
   rangeBtn.max = "35";
   rangeBtn.step = "1";
-  rangeBtn.value = "20";
+  rangeBtn.value = "24";
   const textRange = document.createElement("span");
   textRange.id = "result";
   textRange.innerText = rangeBtn.value;
