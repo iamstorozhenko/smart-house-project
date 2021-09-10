@@ -175,7 +175,7 @@ input[type="range"] {
 
 input[type="range"]::-webkit-slider-runnable-track {
   height: 7px;
-  background-color: #ff7171;
+  background-color: #b8b5ff;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -185,7 +185,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 15px;
   -webkit-appearance: none;
   margin-top: -4px;
-  box-shadow: -200px 0 0 200px #b8b5ff;
+  box-shadow: -200px 0 0 200px #ff7171;
 }
 
 input[type="range"]::-moz-range-track {
