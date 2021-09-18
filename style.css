@@ -37,23 +37,6 @@ body {
   background: #e4fbff;
 }
 
-/* #square {
-  margin: 10px;
-  width: 150px;
-  height: 150px;
-  background: #edeef7;
-  font-size: 20px;
-  border-radius: 20px;
-}
-
-#square p {
-  color: #444941;
-  font-weight: bold;
-  font-size: 28px;
-  text-align: center;
-  justify-content: center;
-} */
-
 #btn-light,
 #btn-curtains,
 #btn-garage,
@@ -163,10 +146,9 @@ body {
   pointer-events: none;
 }
 
-
 #result {
-    margin-bottom: 10px;
-  }
+  margin-bottom: 10px;
+}
 
 input[type="range"] {
   width: 155px;
@@ -445,13 +427,11 @@ audio {
   margin-right: 5px;
 }
 
-/* #btn-forward {
-    cursor: pointer;
-  width: 30px;
-  height: 30px;
-  font-size: 20px;
-  color: #ffffff;
-  border: 1px solid #b8b5ff;
-  background: #b8b5ff;
-  margin-right: 5px;
-} */
+.weather-wrapper {
+  width: 100px;
+  height: 100px;
+  background: #f8485e;
+  position: absolute;
+  margin-left: 1200px;
+  top: 30px;
+}

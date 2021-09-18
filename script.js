@@ -655,3 +655,32 @@ function kitchenSettings(e) {
   boilKettle.id = "boil-kettle";
   kitchenSettings.append(boilKettle);
 }
+
+// Weather API
+
+window.addEventListener("load", () => {
+  let long;
+  let lat;
+  const key = "3c7b9e3a861c6406dc59a5476896e76f";
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      long = position.coords.longitude;
+      lat = position.coords.latitude;
+    });
+  }
+  let api = `http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${key}`;
+
+  fetch(api)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      document.getElementById("h2").innerHTML = data.name;
+      document.getElementById("weather-temperature").innerHTML =
+        Math.round(data.main.temp) - 273 + "&deg";
+      document.getElementById("discription").innerHTML =
+        data.weather[0]["description"];
+    });
+});
