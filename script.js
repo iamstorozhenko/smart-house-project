@@ -665,22 +665,24 @@ window.addEventListener("load", () => {
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position);
       long = position.coords.longitude;
       lat = position.coords.latitude;
+
+      let api = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`;
+
+      fetch(api)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          document.getElementById("weather-header").innerHTML = data.name;
+          document.getElementById("weather-temperature").innerHTML =
+            Math.round(data.main.temp) - 273 + "&deg";
+          document.getElementById("discription").innerHTML =
+            data.weather[0]["description"];
+        });
     });
   }
-  let api = `http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${key}`;
-
-  fetch(api)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
-      document.getElementById("h2").innerHTML = data.name;
-      document.getElementById("weather-temperature").innerHTML =
-        Math.round(data.main.temp) - 273 + "&deg";
-      document.getElementById("discription").innerHTML =
-        data.weather[0]["description"];
-    });
 });
