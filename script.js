@@ -656,8 +656,7 @@ function kitchenSettings(e) {
   kitchenSettings.append(boilKettle);
 }
 
-// Weather API
-
+// API
 window.addEventListener("load", () => {
   let long;
   let lat;
