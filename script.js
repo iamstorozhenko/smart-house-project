@@ -166,51 +166,6 @@ function curtainsSettings(e) {
   inputOnOffCurtains.type = "checkbox";
   inputOnOffCurtains.id = "input-checker-curtains";
   curtainsSettings.append(inputOnOffCurtains);
-
-  //   const getText = document.createElement("p");
-  //   getText.id = "getRandomColorText";
-  //   getText.innerHTML = "Get random light color: ";
-  //   curtainsSettings.append(getText);
-
-  //   const btnWrapper = document.createElement("div");
-  //   btnWrapper.id = "btn-wrapper";
-  //   curtainsSettings.append(btnWrapper);
-
-  //   const randomBtn = document.createElement("button");
-  //   randomBtn.id = "btn-random";
-  //   randomBtn.innerHTML = '<i class="fas fa-random"></i>';
-  //   btnWrapper.append(randomBtn);
-
-  //   const createRandomColor = document.createElement("div");
-  //   createRandomColor.id = "random-color";
-  //   btnWrapper.append(createRandomColor);
-
-  //   const hexColor = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
-  //   randomBtn.addEventListener("click", () => {
-  //     let hex = "#";
-  //     for (let i = 0; i < 6; i++) {
-  //       hex += hexColor[getRandomColor()];
-  //     }
-  //     createRandomColor.style.backgroundColor = hex;
-  //   });
-  //   function getRandomColor() {
-  //     return Math.floor(Math.random() * hexColor.length);
-  //   }
-
-  //   inputOnOffCurtains.addEventListener("click", checkOnOff);
-
-  //   function checkOnOff() {
-  //     if (inputOnOffCurtains.checked == true) {
-  //       document.getElementById("btn-random").disabled = false;
-  //       document.getElementById("btn-random").style.opacity = 1;
-  //       document.getElementById("random-color").style.opacity = 1;
-  //     } else if (inputOnOffCurtains.checked == false) {
-  //       document.getElementById("btn-random").disabled = true;
-  //       document.getElementById("btn-random").style.opacity = 0.3;
-  //       document.getElementById("random-color").style.opacity = 0.3;
-  //     }
-  //   }
-  //   checkOnOff();
 }
 
 class Garage extends MainOption {
@@ -662,8 +617,10 @@ window.addEventListener("load", () => {
   let lat;
   const key = "3c7b9e3a861c6406dc59a5476896e76f";
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
+  // Check location permission
+
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
       console.log(position);
       long = position.coords.longitude;
       lat = position.coords.latitude;
@@ -682,6 +639,34 @@ window.addEventListener("load", () => {
           document.getElementById("discription").innerHTML =
             data.weather[0]["description"];
         });
-    });
-  }
+    },
+    function (error) {
+      if (error.PERMISSION_DENIED) {
+        alert("Allow the browser to use the location");
+      }
+    }
+  );
+
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition((position) => {
+  //       console.log(position);
+  //       long = position.coords.longitude;
+  //       lat = position.coords.latitude;
+
+  //       let api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`;
+
+  //       fetch(api)
+  //         .then((response) => {
+  //           return response.json();
+  //         })
+  //         .then((data) => {
+  //           console.log(data);
+  //           document.getElementById("weather-header").innerHTML = data.name;
+  //           document.getElementById("weather-temperature").innerHTML =
+  //             Math.round(data.main.temp) - 273 + "&deg";
+  //           document.getElementById("discription").innerHTML =
+  //             data.weather[0]["description"];
+  //         });
+  //     });
+  //   }
 });
